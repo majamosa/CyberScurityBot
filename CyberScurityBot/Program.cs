@@ -134,3 +134,47 @@ namespace CyberScurityBot
             }
         }
 
+        static void Main(string[] args)
+        {
+            Playmusic("C:\\Users\\User\\source\\repos\\CyberScurityBot\\CyberScurityBot\\AUD-20260315-WA0004.wav");
+            Console.WriteLine("play file");
+            Console.WriteLine(@"
+        ______________________
+       /                      \
+      |   [ 0 ]       [ 0 ]   |
+      |                        |
+      |        \______/        |
+      |       /  ____  \       |
+      |      |  |____|  |      |
+      |      |__________|      |
+      |                        |
+      |    ---  ----  ---      |
+       \______________________/
+           |            |
+        ___|____________|___
+       /                    \
+      /______________________\
+        ");
+            try
+            {
+                Questioninfo q = new Questioninfo();
+                q.Display();
+                q.Displayinfo();
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Unexpected error: " + ex.Message);
+                Console.ResetColor();
+            }
+        }
+        public static void Playmusic(string filepath)
+        {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = filepath;
+            player.PlaySync();
+        }
+
+    }
+}
+
